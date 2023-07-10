@@ -39,12 +39,12 @@ jobs:
           npm install
           npx lerna bootstrap --no-ci
 
-      - uses: google-github-actions/release-please-action@v3
-        id: release
-        with:
-          command: manifest
-          token: ${{secrets.RELEASE_PR_TOKEN}}
-          default-branch: main
+#      - uses: google-github-actions/release-please-action@v3
+#        id: release
+#        with:
+#          command: manifest
+#          token: ${{secrets.RELEASE_PR_TOKEN}}
+#          default-branch: main
 
       # Release Please has already incremented versions and published tags, so we just
       # need to publish all unpublished versions to npm here
@@ -52,4 +52,4 @@ jobs:
       - name: Publish to npm
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: npx lerna publish from-package --no-push --no-private --no-git-tag-version --no-verify-access --yes
+        run: npm publish --access public
