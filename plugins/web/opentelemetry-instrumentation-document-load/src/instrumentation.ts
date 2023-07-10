@@ -101,7 +101,7 @@ export class DocumentLoadInstrumentation extends InstrumentationBase<unknown> {
     const traceparent = (metaElement && metaElement.content) || '';
     context.with(propagation.extract(ROOT_CONTEXT, { traceparent }), () => {
       const rootSpan = this._startSpan(
-        AttributeNames.DOCUMENT_LOAD,
+        'load '+location.href,
         PTN.FETCH_START,
         entries
       );
@@ -110,7 +110,7 @@ export class DocumentLoadInstrumentation extends InstrumentationBase<unknown> {
       }
       context.with(trace.setSpan(context.active(), rootSpan), () => {
         const fetchSpan = this._startSpan(
-          AttributeNames.DOCUMENT_FETCH,
+          'load '+location.href,
           PTN.FETCH_START,
           entries
         );
