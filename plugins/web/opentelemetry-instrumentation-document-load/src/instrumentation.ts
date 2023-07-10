@@ -190,7 +190,7 @@ export class DocumentLoadInstrumentation extends InstrumentationBase<unknown> {
     parentSpan: Span
   ) {
     const span = this._startSpan(
-      AttributeNames.RESOURCE_FETCH,
+     'load '+resource.name,
       PTN.FETCH_START,
       resource,
       parentSpan
