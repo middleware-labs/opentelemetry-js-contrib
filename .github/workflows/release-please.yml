@@ -49,7 +49,7 @@ jobs:
       # Release Please has already incremented versions and published tags, so we just
       # need to publish all unpublished versions to npm here
       # See: https://github.com/lerna/lerna/tree/main/commands/publish#bump-from-package
-      - name: Publish to npm
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: npm publish --access public
+#      - name: Publish to npm
+#        env:
+#          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+#        run: npm publish --access public

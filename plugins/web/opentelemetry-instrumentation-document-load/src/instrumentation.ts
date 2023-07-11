@@ -38,8 +38,6 @@ import {
   DocumentLoadInstrumentationConfig,
   ResourceFetchCustomAttributeFunction,
 } from './types';
-import { AttributeNames } from './enums/AttributeNames';
-import { VERSION } from './version';
 import { SemanticAttributes } from '@opentelemetry/semantic-conventions';
 import {
   addSpanPerformancePaintEvents,
@@ -59,7 +57,7 @@ export class DocumentLoadInstrumentation extends InstrumentationBase<unknown> {
    * @param config
    */
   constructor(config: DocumentLoadInstrumentationConfig = {}) {
-    super('@opentelemetry/instrumentation-document-load', VERSION, config);
+    super('@middleware-labs/instrumentation-document-load', '0.1', config);
   }
 
   init() {}

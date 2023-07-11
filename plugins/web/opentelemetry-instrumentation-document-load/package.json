@@ -1,24 +1,15 @@
 {
-  "name": "@middleware-labs/instrumentation-document-load",
+  "name": "instrumentation-document-load",
   "version": "0.0.1",
   "description": "OpenTelemetry document-load automatic instrumentation package.",
   "main": "build/src/index.js",
   "module": "build/esm/index.js",
   "types": "build/src/index.d.ts",
-  "repository": "open-telemetry/opentelemetry-js-contrib",
-  "scripts": {
-    "clean": "tsc --build --clean tsconfig.json tsconfig.esm.json",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
-    "precompile": "tsc --version && lerna run version:update --scope @opentelemetry/instrumentation-document-load --include-dependencies",
-    "prewatch": "npm run precompile",
-    "version:update": "node ../../../scripts/version-update.js",
-    "compile": "npm run version:update && tsc --build tsconfig.json tsconfig.esm.json",
-    "prepare": "npm run compile",
-    "tdd": "karma start",
-    "test:browser": "nyc karma start --single-run",
-    "watch": "tsc --build -watch tsconfig.json tsconfig.esm.json"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/open-telemetry/opentelemetry-js-contrib.git"
   },
+  "scripts": {},
   "keywords": [
     "opentelemetry",
     "document-load",
@@ -51,13 +42,13 @@
   },
   "devDependencies": {
     "@babel/core": "7.15.0",
+    "@jsdevtools/coverage-istanbul-loader": "3.0.5",
     "@opentelemetry/api": "^1.3.0",
     "@types/mocha": "8.2.3",
     "@types/node": "18.11.7",
     "@types/sinon": "10.0.2",
     "@types/webpack-env": "1.16.2",
     "babel-loader": "8.2.2",
-    "@jsdevtools/coverage-istanbul-loader": "3.0.5",
     "karma": "6.3.16",
     "karma-chrome-launcher": "^3.1.1",
     "karma-coverage-istanbul-reporter": "3.0.3",
@@ -70,7 +61,7 @@
     "sinon": "15.0.1",
     "ts-loader": "8.3.0",
     "ts-mocha": "10.0.0",
-    "typescript": "4.4.4",
+    "typescript": "^4.9.5",
     "webpack": "4.46.0",
     "webpack-cli": "4.7.2",
     "webpack-merge": "5.8.0"
@@ -83,5 +74,11 @@
     "@opentelemetry/semantic-conventions": "^1.0.0",
     "tslib": "^2.3.1"
   },
-  "homepage": "https://github.com/open-telemetry/opentelemetry-js-contrib/tree/main/plugins/web/opentelemetry-instrumentation-document-load#readme"
+  "homepage": "https://github.com/open-telemetry/opentelemetry-js-contrib/tree/main/plugins/web/opentelemetry-instrumentation-document-load#readme",
+  "bugs": {
+    "url": "https://github.com/open-telemetry/opentelemetry-js-contrib/issues"
+  },
+  "directories": {
+    "test": "test"
+  }
 }
